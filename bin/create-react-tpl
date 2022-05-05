@@ -1,0 +1,41 @@
+#!/bin/bash
+
+APP_NAME=${1:-frontend}
+
+CURRENT_DIR=$(pwd)
+SELF_DIR=$(cd $(dirname $0); pwd)
+
+npx create-react-app $APP_NAME --template typescript
+
+cd $APP_NAME
+
+rm public/*.png
+rm public/favicon.ico
+rm public/manifest.json
+rm public/robots.txt
+
+rm src/*css
+rm src/setupTests.ts 
+rm src/logo.svg
+rm src/App.test.tsx
+rm src/App.tsx
+
+cp -r $SELF_DIR/react-tpl/src/apis src
+cp -r $SELF_DIR/react-tpl/src/components src
+cp -r $SELF_DIR/react-tpl/src/routes src
+cp -r $SELF_DIR/react-tpl/src/types src
+cp -r $SELF_DIR/react-tpl/src/utils src
+cp -r $SELF_DIR/react-tpl/src/utils src
+cp $SELF_DIR/react-tpl/src/App.tsx src
+cp $SELF_DIR/react-tpl/src/index.css src
+
+open ./public/index.html -a /Applications/Sublime\ Text.app
+
+npm i react-router-dom
+npm i --save-dev @types/react-router-dom
+
+npm i @mui/material @emotion/react @emotion/styled
+npm i @mui/icons-material
+
+sed 's/react-scripts build/GENERATE_SOURCEMAP=false react-scripts build/g' package.json
+npm run build
