@@ -4,10 +4,16 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import LoginPage from "../components/pages/LoginPage"
-import SignupPage from "../components/pages/SignupPage"
-import Home from "../components/pages/Home"
-import NotFoundPage from "../components/pages/NotFoundPage"
+
+import {
+  LoginPage,
+  SignupPage,
+  Home
+} from '../components/pages'
+
+import {
+  NotFoundPage
+} from "../components/pages/errors"
 
 
 const AppRoutes = () => {

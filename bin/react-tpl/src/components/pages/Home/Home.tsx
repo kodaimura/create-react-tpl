@@ -1,9 +1,9 @@
 import {useState,useEffect} from 'react';
 
-import {getProfile} from '../../apis/users.api';
+import {getProfile} from '../../../apis/users.api';
 
 
-const Home = () => {
+export const Home = () => {
 	const [username, setUsername] = useState("");
 
 	useEffect(() => {
@@ -16,5 +16,3 @@ const Home = () => {
 	return <p>{username}さん</p>
 		
 }
-
-export default Home;

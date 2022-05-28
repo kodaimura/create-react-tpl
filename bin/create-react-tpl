@@ -25,7 +25,6 @@ cp -r $SELF_DIR/react-tpl/src/components src
 cp -r $SELF_DIR/react-tpl/src/routes src
 cp -r $SELF_DIR/react-tpl/src/types src
 cp -r $SELF_DIR/react-tpl/src/utils src
-cp -r $SELF_DIR/react-tpl/src/utils src
 cp $SELF_DIR/react-tpl/src/App.tsx src
 cp $SELF_DIR/react-tpl/src/index.css src
 

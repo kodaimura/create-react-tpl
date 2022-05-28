@@ -1,11 +1,11 @@
 import {useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
 
-import Header from '../layouts/Header';
-import LoginForm from '../forms/LoginForm';
+import Header from '../../layouts/Header';
+import LoginForm from '../../forms/LoginForm';
 
 
-const LoginPage = () => {
+export const LoginPage = () => {
 	const navigate = useNavigate();
 
 
@@ -21,5 +21,3 @@ const LoginPage = () => {
 		</>
 	)
 }
-
-export default LoginPage;
